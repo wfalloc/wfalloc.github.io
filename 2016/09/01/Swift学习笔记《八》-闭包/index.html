@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift学习笔记《八》-闭包 | Wfalloc
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/prism-customize.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?413401b7ed73ab84113611bf800ea304";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+
+  
+  <!-- 谷歌统计 -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80736453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+            </meta>
+        </meta>
+    </head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    Wfalloc
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                首页
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                归档
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                关于
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                订阅
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift学习笔记《八》-闭包</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/09/01</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><hr>
+<p>闭包（Closure）：匿名的函数</p>
+<p>闭包是自包含的函数代码块，可以在代码中被传递和使用。</p>
+<p>闭包可以捕获和存储其所在上下文中任意常量和变量的引用。这就是所谓的闭包并包裹着这些常量和变量，俗称闭包。Swift会为你管理在捕获过程中涉及到的所有内存操作。</p>
+<p>全局和嵌套函数实际上也是特殊的闭包，闭包采取如下三种形式之一</p>
+<ul>
+<li>全局函数是一个有名字但不会捕获任何值的闭包</li>
+<li>嵌套函数是一个有名字并可以捕获其封闭函数域内值的闭包</li>
+<li>闭包表达式是一个利用轻量级语法所写的可以捕获其上下文中变量或常量值的匿名闭包</li>
+</ul>
+<p>嵌套函数是一个在较复杂函数中方便进行命名和定义自包含代码模块的方式。</p>
+<p>闭包表达式是一种利用简洁语法构建内联闭包的方式。</p>
+<h2 id="闭包表达式语法"><a href="#闭包表达式语法" class="headerlink" title="闭包表达式语法"></a>闭包表达式语法</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//一般形式</span></div><div class="line">&#123;(parameters) -&gt; returnType <span class="keyword">in</span></div><div class="line">	statements</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>闭包表达式语法可以使用常量、变量和inout类型作为参数，不能提供默认值。也可以在参数列表的最后使用可变参数。元组也可以作为参数和返回值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义函数</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">greeting</span><span class="params">()</span></span> &#123;</div><div class="line">	<span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hi = greeting</div><div class="line"><span class="comment">//调用</span></div><div class="line">hi()</div><div class="line"><span class="comment">// Hello World</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//定义闭包</span></div><div class="line"><span class="keyword">var</span> hi = &#123;() -&gt; () <span class="keyword">in</span></div><div class="line">	<span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">hi()</div><div class="line"><span class="comment">// Hello World</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//闭包</span></div><div class="line"><span class="comment">//无参数，无返回值</span></div><div class="line"><span class="keyword">var</span> doSome = &#123;() -&gt; () <span class="keyword">in</span></div><div class="line">	<span class="comment">//doSomething</span></div><div class="line">	<span class="built_in">print</span>(<span class="string">"doSomething"</span>)</div><div class="line">&#125;</div><div class="line">doSome()</div><div class="line"><span class="comment">// doSomething</span></div><div class="line"></div><div class="line"><span class="comment">//有参数，无返回值</span></div><div class="line"><span class="keyword">var</span> doSome = &#123;(name: <span class="type">String</span>) -&gt; () <span class="keyword">in</span></div><div class="line">	<span class="built_in">print</span>(<span class="string">"hello <span class="subst">\(name)</span>"</span>)</div><div class="line">&#125;</div><div class="line">doSome(<span class="string">"jack"</span>)</div><div class="line"><span class="comment">// hello jack</span></div><div class="line"></div><div class="line"><span class="comment">//无参数，有返回值</span></div><div class="line"><span class="keyword">var</span> doSome = &#123;() -&gt; (<span class="type">String</span>) <span class="keyword">in</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"Hello World"</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> hi = doSome()</div><div class="line"><span class="built_in">print</span>(hi)</div><div class="line"><span class="comment">// Hello World</span></div><div class="line"></div><div class="line"><span class="comment">//有参数，有返回值</span></div><div class="line"><span class="keyword">var</span> add = &#123;(a: <span class="type">Int</span>, b: <span class="type">Int</span>) -&gt; (<span class="type">Int</span>) <span class="keyword">in</span></div><div class="line">	<span class="keyword">return</span> a + b</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> sum = add(<span class="number">1</span>, <span class="number">2</span>)</div><div class="line"><span class="built_in">print</span>(sum)</div><div class="line"><span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="comment">//作为函数的参数</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">closure</span><span class="params">(sayHi: <span class="params">(name: String)</span></span></span> -&gt; (<span class="type">String</span>)) &#123;</div><div class="line">	<span class="keyword">let</span> peopleName = <span class="string">"zhangsan"</span></div><div class="line">	<span class="keyword">let</span> say = sayHi(name: peopleName)</div><div class="line">	<span class="built_in">print</span>(say)</div><div class="line">&#125;</div><div class="line"></div><div class="line">closure &#123;(name) -&gt; (<span class="type">String</span>) <span class="keyword">in</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"hello "</span> + name</div><div class="line">&#125;</div><div class="line"><span class="comment">// hello zhangsan</span></div></pre></td></tr></table></figure>
+<h2 id="闭包的省略形式"><a href="#闭包的省略形式" class="headerlink" title="闭包的省略形式"></a>闭包的省略形式</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> names = [<span class="string">"D"</span>, <span class="string">"A"</span>, <span class="string">"C"</span>, <span class="string">"B"</span>, <span class="string">"E"</span>]</div><div class="line">names.<span class="built_in">sort</span>(by: &#123;(s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></div><div class="line">	<span class="keyword">return</span> s1 &gt; s2</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//缩写为一行</span></div><div class="line">names.<span class="built_in">sort</span>(by: &#123;(s1: <span class="type">String</span>, s2: <span class="type">String</span>) -&gt; <span class="type">Bool</span> <span class="keyword">in</span> <span class="keyword">return</span> s1 &gt; s2&#125;)</div><div class="line"></div><div class="line"><span class="comment">//Swift会根据上下文推断类型</span></div><div class="line">names.<span class="built_in">sort</span>(by: &#123;s1, s2 <span class="keyword">in</span> <span class="keyword">return</span> s1 &gt; s2&#125;)</div><div class="line"></div><div class="line"><span class="comment">//单表达式闭包隐式返回</span></div><div class="line">names.<span class="built_in">sort</span>(by: &#123;s1, s2 <span class="keyword">in</span> s1 &gt; s2&#125;)</div><div class="line"></div><div class="line"><span class="comment">//参数名称缩写</span></div><div class="line">names.<span class="built_in">sort</span>(by: &#123; $<span class="number">0</span> &gt; $<span class="number">1</span> &#125;)</div></pre></td></tr></table></figure>
+<hr>
+<p>本文参考：</p>
+<p><a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/#//apple_ref/doc/uid/TP40014097-CH3-ID0" target="_blank" rel="external">The Swift Programming Language</a></p>
+<p><a href="https://hugolu.gitbooks.io/learn-swift/content/Basic/Closure.html" target="_blank" rel="external">Swift 學習筆記–Closure</a></p>
+<p>转载请注明出处！</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/09/02/Swift学习笔记《九》-枚举/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《九》-枚举</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/08/23/Swift学习笔记《七》-函数/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《七》-函数</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift学习笔记《八》-闭包.md" data-title="Swift学习笔记《八》-闭包" data-url="https://wfalloc.github.com/2016/09/01/Swift学习笔记《八》-闭包/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+    <aside>
+        <div id="toc">
+        </div>
+    </aside>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2017 Wf
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>

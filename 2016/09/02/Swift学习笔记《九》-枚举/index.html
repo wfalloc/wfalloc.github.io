@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift学习笔记《九》-枚举 | Wfalloc
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/prism-customize.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?413401b7ed73ab84113611bf800ea304";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+
+  
+  <!-- 谷歌统计 -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80736453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+            </meta>
+        </meta>
+    </head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    Wfalloc
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                首页
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                归档
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                关于
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                订阅
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift学习笔记《九》-枚举</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/09/02</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <h2 id="枚举语法"><a href="#枚举语法" class="headerlink" title="枚举语法"></a>枚举语法</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用枚举表示指南针四个方向</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">CompassPoint</span> </span>&#123;</div><div class="line">    <span class="comment">//枚举定义</span></div><div class="line">    <span class="keyword">case</span> <span class="type">North</span></div><div class="line">    <span class="keyword">case</span> <span class="type">South</span></div><div class="line">    <span class="keyword">case</span> <span class="type">East</span></div><div class="line">    <span class="keyword">case</span> <span class="type">West</span></div><div class="line">&#125;</div><div class="line">        </div><div class="line"><span class="comment">//多个成员值可以出现在同一行上，用逗号隔开</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Planet</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Mercury</span>, <span class="type">Venus</span>, <span class="type">Earth</span>, <span class="type">Mars</span>, <span class="type">Jupiter</span>, <span class="type">Saturn</span>, <span class="type">Uranus</span></div><div class="line">&#125;</div><div class="line">        </div><div class="line"><span class="comment">//使用点语法赋值</span></div><div class="line"><span class="keyword">var</span> directionToHead = <span class="type">CompassPoint</span>.<span class="type">West</span></div><div class="line"><span class="comment">//类型已知时，再次赋值可以省略枚举类型名</span></div><div class="line">directionToHead = .<span class="type">East</span></div></pre></td></tr></table></figure>
+<h2 id="使用Switch语句匹配枚举值"><a href="#使用Switch语句匹配枚举值" class="headerlink" title="使用Switch语句匹配枚举值"></a>使用Switch语句匹配枚举值</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span> directionToHead &#123;</div><div class="line"><span class="keyword">case</span> .<span class="type">North</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"NORTH"</span>)</div><div class="line"><span class="keyword">case</span> .<span class="type">South</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"SOUTH"</span>)</div><div class="line"><span class="keyword">case</span> .<span class="type">East</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"EAST"</span>)</div><div class="line"><span class="keyword">case</span> .<span class="type">West</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"WEST"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="关联值（Associated-Values）"><a href="#关联值（Associated-Values）" class="headerlink" title="关联值（Associated Values）"></a>关联值（Associated Values）</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">number</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">NInt</span>(<span class="type">Int</span>)</div><div class="line">    <span class="keyword">case</span> <span class="type">NFloat</span>(<span class="type">Float</span>)</div><div class="line">    <span class="keyword">case</span> <span class="type">NDouble</span>(<span class="type">Double</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="keyword">var</span> num = number.<span class="type">NInt</span>(<span class="number">12</span>)</div><div class="line"><span class="comment">//使用switch检查</span></div><div class="line"><span class="keyword">switch</span> num &#123;</div><div class="line"><span class="keyword">case</span> .<span class="type">NInt</span>(<span class="keyword">let</span> a):</div><div class="line">    <span class="built_in">print</span>(a)</div><div class="line"><span class="keyword">case</span> .<span class="type">NFloat</span>(<span class="keyword">let</span> b):</div><div class="line">    <span class="built_in">print</span>(b)</div><div class="line"><span class="keyword">case</span> .<span class="type">NDouble</span>(<span class="keyword">let</span> <span class="built_in">c</span>):</div><div class="line">    <span class="built_in">print</span>(<span class="built_in">c</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">//另一种写法</span></div><div class="line"><span class="keyword">switch</span> num &#123;</div><div class="line"><span class="keyword">case</span> <span class="keyword">let</span> .<span class="type">NInt</span>(a):</div><div class="line">    <span class="built_in">print</span>(a)</div><div class="line"><span class="keyword">case</span> <span class="keyword">let</span> .<span class="type">NFloat</span>(b):</div><div class="line">    <span class="built_in">print</span>(b)</div><div class="line"><span class="keyword">case</span> <span class="keyword">let</span> .<span class="type">NDouble</span>(<span class="built_in">c</span>):</div><div class="line">    <span class="built_in">print</span>(<span class="built_in">c</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//枚举成员可以被默认值预填充，这些原始值的类型必须相同。</span></div><div class="line"><span class="comment">//原始值可以是字符串，字符，或者任意整型值或浮点型值。每个原始值在枚举声明中必须是唯一的。</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ASCIIControlCharacter</span>: <span class="title">Character</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Tab</span> = <span class="string">"\t"</span></div><div class="line">    <span class="keyword">case</span> <span class="type">LineFeed</span> = <span class="string">"\n"</span></div><div class="line">    <span class="keyword">case</span> <span class="type">CarriageReturn</span> = <span class="string">"\r"</span></div><div class="line">&#125;</div><div class="line">        </div><div class="line"><span class="comment">//原始值的隐式赋值</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Plane</span>: <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Mercury</span> = <span class="number">1</span>, <span class="type">Venus</span>, <span class="type">Earth</span>, <span class="type">Mars</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//Plane.Mercury的显式原始值为1，Plane.Venus的隐式原始值为2，依次类推。</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">CompassPoints</span>: <span class="title">String</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">North</span>, <span class="type">South</span>, <span class="type">East</span>, <span class="type">West</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//CompassPoints.North拥有隐式原始值North</span></div><div class="line">        </div><div class="line"><span class="comment">//使用rawValue属性访问该枚举成员的原始值</span></div><div class="line"><span class="built_in">print</span>(<span class="type">CompassPoints</span>.<span class="type">North</span>.rawValue)</div><div class="line">        </div><div class="line"><span class="comment">//使用原始值初始化枚举实例</span></div><div class="line"><span class="keyword">let</span> possible = <span class="type">Plane</span>(rawValue: <span class="number">2</span>)</div><div class="line"><span class="comment">//原始值构造器返回一个可选的枚举成员。</span></div></pre></td></tr></table></figure>
+<hr>
+<p>本文参考：<a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/#//apple_ref/doc/uid/TP40014097-CH3-ID0" target="_blank" rel="external">The Swift Programming Language</a></p>
+<p>转载请注明出处！</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/09/07/Swift学习笔记《十》-类和结构体/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《十》-类和结构体</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/09/01/Swift学习笔记《八》-闭包/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《八》-闭包</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift学习笔记《九》-枚举.md" data-title="Swift学习笔记《九》-枚举" data-url="https://wfalloc.github.com/2016/09/02/Swift学习笔记《九》-枚举/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+    <aside>
+        <div id="toc">
+        </div>
+    </aside>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2017 Wf
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift学习笔记《四》-字符与字符串 | Wfalloc
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/prism-customize.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?413401b7ed73ab84113611bf800ea304";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+
+  
+  <!-- 谷歌统计 -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80736453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+            </meta>
+        </meta>
+    </head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    Wfalloc
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                首页
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                归档
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                关于
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                订阅
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift学习笔记《四》-字符与字符串</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/08/03</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <h2 id="初始化字符串"><a href="#初始化字符串" class="headerlink" title="初始化字符串"></a>初始化字符串</h2><hr>
+<h3 id="通过字面量"><a href="#通过字面量" class="headerlink" title="通过字面量"></a>通过字面量</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someString = <span class="string">"let string"</span></div><div class="line"><span class="keyword">var</span> littleString = <span class="string">"var string"</span></div><div class="line"><span class="keyword">let</span> emptyString = <span class="string">""</span>   <span class="comment">//通过字面量初始化空字符串</span></div></pre></td></tr></table></figure>
+<h3 id="通过初始化方法"><a href="#通过初始化方法" class="headerlink" title="通过初始化方法"></a>通过初始化方法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> otherEmptyString = <span class="type">String</span>()   <span class="comment">//通过初始化方法初始化字符串</span></div></pre></td></tr></table></figure>
+<h3 id="通过一个Character类型的数组来初始化字符串"><a href="#通过一个Character类型的数组来初始化字符串" class="headerlink" title="通过一个Character类型的数组来初始化字符串"></a>通过一个<code>Character</code>类型的数组来初始化字符串</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> chars:[<span class="type">Character</span>] = [<span class="string">"h"</span>,<span class="string">"e"</span>,<span class="string">"l"</span>,<span class="string">"l"</span>,<span class="string">"o"</span>]</div><div class="line"><span class="keyword">let</span> charsString = <span class="type">String</span>(chars)</div></pre></td></tr></table></figure>
+<h3 id="判断字符串是否为空"><a href="#判断字符串是否为空" class="headerlink" title="判断字符串是否为空"></a>判断字符串是否为空</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> emptyString.isEmpty &#123;   <span class="comment">//指示一个字符串是否包含字符，与 emptyString == "" 等同</span></div><div class="line">	<span class="built_in">print</span>(<span class="string">"isEmpty"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注：字符串的可变性（通过常量、变量来控制）.字符串类型是值类型,如果你创建了一个新的字符串，那么当其进行常量、变量的赋值操作，或在(函数/方法)中传递时，会进行值拷贝。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> countString = <span class="string">"A countString"</span>   <span class="comment">//不可修改</span></div><div class="line"><span class="comment">//countString = "New countString"   编译器报错</span></div><div class="line"><span class="keyword">var</span> variableString = <span class="string">"A variableString"</span>   <span class="comment">//可修改</span></div><div class="line">variableString += <span class="string">"New variableString"</span></div></pre></td></tr></table></figure></p>
+<h2 id="使用字符（Characters）"><a href="#使用字符（Characters）" class="headerlink" title="使用字符（Characters）"></a>使用字符（Characters）</h2><hr>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> a <span class="keyword">in</span> charsString.characters &#123;</div><div class="line">	<span class="built_in">print</span>(a)</div><div class="line">&#125;</div><div class="line"><span class="comment">// h</span></div><div class="line"><span class="comment">// e</span></div><div class="line"><span class="comment">// l</span></div><div class="line"><span class="comment">// l</span></div><div class="line"><span class="comment">// o</span></div></pre></td></tr></table></figure>
+<h3 id="定义一个字符常量或变量（Character）"><a href="#定义一个字符常量或变量（Character）" class="headerlink" title="定义一个字符常量或变量（Character）"></a>定义一个字符常量或变量（Character）</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> char: <span class="type">Character</span> = <span class="string">"c"</span>   <span class="comment">//不标明Character类型，会被Swift识别为String</span></div><div class="line"><span class="keyword">var</span> chara: <span class="type">Character</span> = <span class="string">"v"</span></div></pre></td></tr></table></figure>
+<h3 id="计算字符数量"><a href="#计算字符数量" class="headerlink" title="计算字符数量"></a>计算字符数量</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> string = <span class="string">"Hello world!"</span></div><div class="line"><span class="built_in">print</span>(string.characters.<span class="built_in">count</span>)   </div><div class="line"><span class="comment">// 12</span></div></pre></td></tr></table></figure>
+<h2 id="连接字符串和字符"><a href="#连接字符串和字符" class="headerlink" title="连接字符串和字符"></a>连接字符串和字符</h2><hr>
+<h3 id="通过加法运算符（-）"><a href="#通过加法运算符（-）" class="headerlink" title="通过加法运算符（+）"></a>通过加法运算符（+）</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> stringOfOne = <span class="string">"Hello "</span></div><div class="line"><span class="keyword">let</span> stringOfTwo = <span class="string">"world!"</span></div><div class="line"><span class="keyword">let</span> allString = stringOfOne + stringOfTwo   </div><div class="line"><span class="comment">// "Hello world!"</span></div></pre></td></tr></table></figure>
+<h3 id="通过加法赋值运算符（-）"><a href="#通过加法赋值运算符（-）" class="headerlink" title="通过加法赋值运算符（+=）"></a>通过加法赋值运算符（+=）</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newString = <span class="string">"Hello"</span></div><div class="line">newString += stringOfTwo</div><div class="line"><span class="comment">// "Hello world!"</span></div></pre></td></tr></table></figure>
+<h3 id="通过append-将-一个字符-或-一个字符串-或-一个Unicode标量-附加到一个字符串变量尾部"><a href="#通过append-将-一个字符-或-一个字符串-或-一个Unicode标量-附加到一个字符串变量尾部" class="headerlink" title="通过append()将 一个字符 或 一个字符串 或 一个Unicode标量 附加到一个字符串变量尾部"></a>通过<code>append()</code>将 一个字符 或 一个字符串 或 一个<code>Unicode</code>标量 附加到一个字符串变量尾部</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// newString.append(c: Character)</span></div><div class="line"><span class="comment">// newString.append(other: String)</span></div><div class="line"><span class="comment">// newString.append(x: UnicodeScalar)</span></div></pre></td></tr></table></figure>
+<h2 id="字符串插值"><a href="#字符串插值" class="headerlink" title="字符串插值"></a>字符串插值</h2><hr>
+<p>使用/()将需要插入的常量、变量、字面量、表达式 包裹起来</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> number = <span class="number">3</span></div><div class="line"><span class="keyword">let</span> message = <span class="string">"<span class="subst">\(number)</span> times 2.5 is <span class="subst">\(Double(number)</span> * 2.5)"</span></div><div class="line"><span class="comment">// 3 times 2.5 is 7.5</span></div></pre></td></tr></table></figure>
+<p>注意：插值字符串中写在括号中的表达式不能包含非转义反斜杠\ 回车 换行符。 可以包含\0(空字符)、\(反斜线)、\t(水平制表符)、\n(换行符)、\r(回车符)、\”(双引号)、\’(单引号)</p>
+<h2 id="访问和修改字符串"><a href="#访问和修改字符串" class="headerlink" title="访问和修改字符串"></a>访问和修改字符串</h2><hr>
+<h3 id="字符串索引"><a href="#字符串索引" class="headerlink" title="字符串索引"></a>字符串索引</h3><p>每个<code>String</code>值都有一个关联的索引(index)类型，<code>String.Index</code>,它对应着字符串中的每一个字符 <code>Character</code> 的位置。<font color="#bd371c" size="4px"><em>字符串的索引是从零开始的</em></font></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"Hello Swift"</span></div><div class="line"></div><div class="line"><span class="comment">// 1.获取字符串的第一个字符的索引</span></div><div class="line"><span class="keyword">let</span> firstIndex = string.startIndex</div><div class="line"><span class="built_in">print</span>(string[firstIndex])</div><div class="line"><span class="comment">// H</span></div><div class="line"></div><div class="line"><span class="comment">// 2.获取字符串的最后一个字符的后一个位置的索引， endIndex 属性不能作为一个字符串的有效下标。</span></div><div class="line"><span class="comment">// 如果字符串是空值， startIndex 和 endIndex 是相等的。</span></div><div class="line"><span class="keyword">let</span> endIndex = string.endIndex</div><div class="line"><span class="comment">//print(string[endIndex])   将引发运行时错误</span></div><div class="line"></div><div class="line"><span class="comment">// 3.获取相应下标前面一个的索引</span></div><div class="line"><span class="comment">//let beforeIndex = string.endIndex.predecessor()   Swift2.2</span></div><div class="line"><span class="keyword">let</span> beforeIndex = string.index(before: string.endIndex)   <span class="comment">//Swift3.0</span></div><div class="line"></div><div class="line"><span class="comment">// 4.获取相应下标后面一个的索引</span></div><div class="line"><span class="comment">//let afterIndex = string.startIndex.successor()   Swift2.2</span></div><div class="line"><span class="keyword">let</span> afterIndex = string.index(after: string.startIndex)   <span class="comment">//Swift3.0</span></div><div class="line"></div><div class="line"><span class="comment">// 5.获取相应下标前后几个的索引（正数代表向后，负数代表向前）</span></div><div class="line"><span class="comment">//let afterStartIndex = string.startIndex.advancedBy(4)   Swift2.2</span></div><div class="line"><span class="keyword">let</span> afterStartIndex = string.index(string.startIndex, offsetBy: <span class="number">4</span>)   <span class="comment">//Swift3.0</span></div><div class="line"></div><div class="line"><span class="comment">// 6.使用 characters 的 indices 属性，创建一个包含全部索引的范围 （Range）用来在一个字符串中访问单个字符。</span></div><div class="line"><span class="keyword">for</span> index <span class="keyword">in</span> string.characters.<span class="built_in">indices</span> &#123;</div><div class="line">    <span class="built_in">print</span>(string[index])</div><div class="line">&#125;</div><div class="line"><span class="comment">//H</span></div><div class="line"><span class="comment">//e</span></div><div class="line"><span class="comment">//l</span></div><div class="line"><span class="comment">//l</span></div><div class="line"><span class="comment">//o</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//S</span></div><div class="line"><span class="comment">//w</span></div><div class="line"><span class="comment">//i</span></div><div class="line"><span class="comment">//f</span></div><div class="line"><span class="comment">//t</span></div><div class="line"></div><div class="line"><span class="comment">// 7.通过范围获取字符串中的子串</span></div><div class="line"><span class="comment">//var subString = string[string.startIndex...string.startIndex.advancedBy(4)]   //Swift2.2</span></div><div class="line"><span class="keyword">var</span> subString = string[string.startIndex...string.index(string.startIndex, offsetBy: <span class="number">4</span>)]   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hello"</span></div><div class="line"></div><div class="line"><span class="comment">// 8.获取某个子串在父串中的范围</span></div><div class="line"><span class="comment">//var range = string.rangeOfString("Hello")   //Swift2.2</span></div><div class="line"><span class="keyword">var</span> range = string.range(of: <span class="string">"Hello"</span>)   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// 0..&lt;5</span></div><div class="line"></div><div class="line"><span class="comment">// 9.替换指定范围的字符串</span></div><div class="line"><span class="comment">//string.replaceRange(string.startIndex...string.startIndex.advancedBy(4), with: "Hi")   //Swift2.2</span></div><div class="line">string.replaceSubrange(string.startIndex...string.index(string.startIndex, offsetBy: <span class="number">4</span>), with: <span class="string">"Hi"</span>)   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hi Swift"</span></div><div class="line"></div><div class="line"><span class="comment">// 10.全部转换为大写</span></div><div class="line"><span class="comment">//string.uppercaseString   //Swift2.2</span></div><div class="line">string.uppercased()   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "HI SWIFT"</span></div><div class="line"></div><div class="line"><span class="comment">// 11.全部转换为小写</span></div><div class="line"><span class="comment">//string.lowercaseString   //Swift2.2</span></div><div class="line">string.lowercased()   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "hi swift"</span></div></pre></td></tr></table></figure>
+<h3 id="插入和删除"><a href="#插入和删除" class="headerlink" title="插入和删除"></a>插入和删除</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> welcome = <span class="string">"Hello"</span></div><div class="line"></div><div class="line"><span class="comment">// 1.插入字符</span></div><div class="line"><span class="comment">//welcome.insert("!", atIndex: welcome.endIndex)   Swift2.2</span></div><div class="line">welcome.insert(<span class="string">"!"</span>, at: welcome.endIndex)   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hello!"</span></div><div class="line"></div><div class="line"><span class="comment">// 2.插入字符串</span></div><div class="line"><span class="comment">//welcome.insertContentsOf(" World".characters, at: welcome.endIndex.predecessor())   Swift2.2</span></div><div class="line">welcome.insert(contentsOf: <span class="string">" World"</span>.characters, at: welcome.index(before: welcome.endIndex))   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hello World!"</span></div><div class="line"></div><div class="line"><span class="comment">// 3.删除指定索引的字符</span></div><div class="line"><span class="comment">//welcome.removeAtIndex(welcome.endIndex.predecessor())   Swift2.2</span></div><div class="line">welcome.remove(at: welcome.index(before: welcome.endIndex))   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hello World"</span></div><div class="line"></div><div class="line"><span class="comment">// 4.删除指定范围的字符串</span></div><div class="line"><span class="comment">//welcome.removeRange(welcome.startIndex.advancedBy(5)..&lt;welcome.endIndex)   Swift2.2</span></div><div class="line">welcome.removeSubrange(welcome.index(welcome.startIndex, offsetBy: <span class="number">5</span>)..&lt;welcome.endIndex)   <span class="comment">//Swift3.0</span></div><div class="line"><span class="comment">// "Hello"</span></div><div class="line"></div><div class="line"><span class="comment">// 5.删除所有</span></div><div class="line">welcome.removeAll()</div><div class="line"><span class="comment">// ""</span></div></pre></td></tr></table></figure>
+<h2 id="比较字符串"><a href="#比较字符串" class="headerlink" title="比较字符串"></a>比较字符串</h2><hr>
+<p><code>Swift</code>中有三种方式：字符串字符相等、前缀相等、后缀相等。</p>
+<h3 id="字符串-字符相等"><a href="#字符串-字符相等" class="headerlink" title="字符串/字符相等"></a>字符串/字符相等</h3><p>字符串/字符相等 可以用等于操作符（==）和不等于操作符（!=）</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">"a"</span></div><div class="line"><span class="keyword">let</span> b = <span class="string">"a"</span></div><div class="line"><span class="keyword">if</span> a == b &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"a = b"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="前缀-后缀相等"><a href="#前缀-后缀相等" class="headerlink" title="前缀/后缀相等"></a>前缀/后缀相等</h3><p>例子为一个字符串数组表示莎士比亚话剧《罗密欧与朱丽叶》中前两场的场景位置</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> romeoAndJuliet = [</div><div class="line">	<span class="string">"Act 1 Scene 1: Verona, A public place"</span>,</div><div class="line">    <span class="string">"Act 1 Scene 2: Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 1 Scene 3: A room in Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 1 Scene 4: A street outside Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 1 Scene 5: The Great Hall in Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 1: Outside Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 2: Capulet's orchard"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 3: Outside Friar Lawrence's cell"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 4: A street in Verona"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 5: Capulet's mansion"</span>,</div><div class="line">    <span class="string">"Act 2 Scene 6: Friar Lawrence's cell"</span></div><div class="line">]</div><div class="line"><span class="keyword">var</span> act1SceneCount = <span class="number">0</span></div><div class="line"><span class="keyword">for</span> scene <span class="keyword">in</span> romeoAndJuliet &#123;</div><div class="line">	<span class="keyword">if</span> scene.hasPrefix(<span class="string">"Act 1 "</span>) &#123;</div><div class="line">		act1SceneCount += <span class="number">1</span></div><div class="line">	&#125; </div><div class="line">&#125;</div><div class="line"><span class="built_in">print</span>(<span class="string">"There are <span class="subst">\(act1SceneCount)</span> scenes in Act 1"</span>)</div><div class="line"><span class="comment">// 输出"There are 5 scenes in Act 1"      </span></div><div class="line"><span class="keyword">var</span> mansionCount = <span class="number">0</span></div><div class="line"><span class="keyword">var</span> cellCount = <span class="number">0</span></div><div class="line"><span class="keyword">for</span> scene <span class="keyword">in</span> romeoAndJuliet &#123;</div><div class="line">	<span class="keyword">if</span> scene.hasSuffix(<span class="string">"Capulet's mansion"</span>) &#123;</div><div class="line">		mansionCount += <span class="number">1</span></div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> scene.hasSuffix(<span class="string">"Friar Lawrence's cell"</span>) &#123;</div><div class="line">		cellCount += <span class="number">1</span></div><div class="line">	&#125; </div><div class="line">&#125;</div><div class="line"><span class="built_in">print</span>(<span class="string">"<span class="subst">\(mansionCount)</span> mansion scenes; <span class="subst">\(cellCount)</span> cell scenes"</span>)</div><div class="line"><span class="comment">// 输出"6 mansion scenes; 2 cell scenes"</span></div></pre></td></tr></table></figure>
+<hr>
+<p>本文参考： </p>
+<p><a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/#//apple_ref/doc/uid/TP40014097-CH3-ID0" target="_blank" rel="external">The Swift Programming Language</a> </p>
+<p><a href="http://my.oschina.net/u/2340880/blog/692818" target="_blank" rel="external">Swift3.0带来的变化汇总系列一字符串与基本运算符中的变化</a></p>
+<p>转载请注明出处！</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/08/11/Swift学习笔记《五》-集合/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《五》-集合</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/07/23/Swift学习笔记《三》-基本运算符/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《三》-基本运算符</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift学习笔记《四》-字符与字符串.md" data-title="Swift学习笔记《四》-字符与字符串" data-url="https://wfalloc.github.com/2016/08/03/Swift学习笔记《四》-字符与字符串/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+    <aside>
+        <div id="toc">
+        </div>
+    </aside>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2017 Wf
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>

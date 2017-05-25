@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift学习笔记《十一》-属性与方法 | Wfalloc
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/prism-customize.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?413401b7ed73ab84113611bf800ea304";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+
+  
+  <!-- 谷歌统计 -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80736453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+            </meta>
+        </meta>
+    </head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    Wfalloc
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                首页
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                归档
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                关于
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                订阅
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift学习笔记《十一》-属性与方法</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/09/08</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <ul>
+<li>属性将值跟特定的类、结构或枚举关联</li>
+<li>存储属性存储常量或变量作为实例的一部分</li>
+<li>计算属性计算(不是存储)一个值</li>
+<li>计算属性可以用于类、结构体和枚举</li>
+<li>存储属性只能用于类和结构体</li>
+</ul>
+<p>存储属性和计算属性通常与特定类型的实例关联。但是，属性也可以直接作用于类型本身，这种属性称为类型属性。</p>
+<h2 id="存储属性"><a href="#存储属性" class="headerlink" title="存储属性"></a>存储属性</h2><hr>
+<p>一个存储属性就是存储在特定类或结构体的实例里的一个常量或变量。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FixedLengthRange</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> firstValue: <span class="type">Int</span></div><div class="line">    <span class="keyword">let</span> length: <span class="type">Int</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> rangeOfThreeItems = <span class="type">FixedLengthRange</span>(firstValue: <span class="number">1</span>, length: <span class="number">3</span>)</div><div class="line">rangeOfThreeItems.firstValue = <span class="number">6</span></div></pre></td></tr></table></figure>
+<h3 id="常量结构体的存储属性"><a href="#常量结构体的存储属性" class="headerlink" title="常量结构体的存储属性"></a>常量结构体的存储属性</h3><p>创建一个结构体的实例并将其赋值给一个常量，则无法修改该实例的任何属性。即使定义了变量存储属性。</p>
+<p>这种行为是由于结构体(<code>struct</code>)属于值类型。当值类型的实例被声明为常量的时候，它的所有属性也就成了常量。</p>
+<p>属于引用类型的类(<code>class</code>)则不一样。把一个引用类型的实例赋值给一个常量后，仍然可以修改该实例的变量属性。</p>
+<h3 id="延迟存储属性-懒加载"><a href="#延迟存储属性-懒加载" class="headerlink" title="延迟存储属性 (懒加载)"></a>延迟存储属性 (懒加载)</h3><p>延迟存储属性是指当第一次被调用的时候才会计算其初始值的属性。</p>
+<p>在属性声明前使用<code>lazy</code>来标示一个延迟存储属性。</p>
+<font color="#bd371c" size="4px"><em>注：必须将延迟存储属性声明成变量(使用 <code>var</code> 关键字)，因为属性的初始值可能在实例构造完成之后才会得到。而常量属性在构造过程完成之前必须要有初始值，因此无法声明成延迟属性。</em></font>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataImporter</span> </span>&#123;</div><div class="line">    <span class="comment">//DataImporter 将外部文件中的数据导入 初始化会消耗不少时间</span></div><div class="line">    <span class="keyword">var</span> fileName = <span class="string">"abc.database"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataManager</span> </span>&#123;</div><div class="line">    <span class="comment">//DataManager 数据管理</span></div><div class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> importer = <span class="type">DataImporter</span>()</div><div class="line">    <span class="keyword">var</span> data = [<span class="type">String</span>]()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> manager = <span class="type">DataManager</span>()</div><div class="line">manager.data.append(<span class="string">"Some data"</span>)</div><div class="line"><span class="built_in">print</span>(manager)</div><div class="line"><span class="built_in">print</span>(manager.importer.fileName)</div><div class="line"><span class="comment">// 如果一个被标记为 lazy 的属性在没有初始化时就同时被多个线程访问，则无法保证该属性只会被初始化一次。</span></div></pre></td></tr></table></figure>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><hr>
+<p>计算属性不直接存储值，而是提供一个 <code>getter</code> 和一个可选的 <code>setter</code> ，来间接获取和设置其他属性或变量的值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Size</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rect</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> oright = <span class="type">Point</span>()</div><div class="line">    <span class="keyword">var</span> size = <span class="type">Size</span>()</div><div class="line">    <span class="keyword">var</span> center: <span class="type">Point</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">let</span> centerX = oright.x + (size.width / <span class="number">2</span>)</div><div class="line">            <span class="keyword">let</span> centerY = oright.y + (size.height / <span class="number">2</span>)</div><div class="line">            <span class="keyword">return</span> <span class="type">Point</span>(x: centerX, y: centerY)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">set</span> &#123;</div><div class="line">            oright.x = newValue.x - (size.width / <span class="number">2</span>)</div><div class="line">            oright.y = newValue.y - (size.height / <span class="number">2</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> square = <span class="type">Rect</span>(oright: <span class="type">Point</span>(x: <span class="number">0.0</span>, y: <span class="number">0.0</span>), size: <span class="type">Size</span>(width: <span class="number">10.0</span>, height: <span class="number">10.0</span>))</div><div class="line"><span class="keyword">let</span> initialSquareCenter = square.center</div><div class="line">square.center = <span class="type">Point</span>(x: <span class="number">15.0</span>, y: <span class="number">15.0</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"old -- <span class="subst">\(initialSquareCenter)</span> new -- <span class="subst">\(square.center)</span>"</span>)</div><div class="line"><span class="comment">//output: old -- Point(x: 5.0, y: 5.0) new -- Point(x: 15.0, y: 15.0)</span></div></pre></td></tr></table></figure>
+<h3 id="只读计算属性"><a href="#只读计算属性" class="headerlink" title="只读计算属性"></a>只读计算属性</h3><p>只有 <code>getter</code> 没有 <code>setter</code> 的计算属性就是只读计算属性。只读计算属性总是返回一个值，可以通过点运算符访问，但不能设置新的值。</p>
+<font color="#bd371c" size="4px"><em>注：必须使用 <code>var</code> 关键字定义计算属性，包括只读计算属性，因为它们的值是不固定的。<code>let</code> 关键字只用来声明常量属性，表示初始化后再也无法修改的值。</em></font>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//只读计算属性的声明可以去掉 get 关键字和花括号：</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cuboid</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span>, depth = <span class="number">0.0</span></div><div class="line">    <span class="keyword">var</span> volume: <span class="type">Double</span> &#123;</div><div class="line">        <span class="keyword">return</span> width * height * depth</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> fourByFiveByTwo = <span class="type">Cuboid</span>(width: <span class="number">4.0</span>, height: <span class="number">5.0</span>, depth: <span class="number">2.0</span>)</div><div class="line"><span class="built_in">print</span>(fourByFiveByTwo.volume)</div><div class="line"><span class="comment">//output: 40.0</span></div></pre></td></tr></table></figure>
+<h2 id="属性观察器"><a href="#属性观察器" class="headerlink" title="属性观察器"></a>属性观察器</h2><hr>
+<p>属性观察器监控和响应属性值的变化。</p>
+<p>可以为除了延迟存储属性之外的其他存储属性添加属性观察器，也可以通过重写属性的方式为继承的属性（包括存储属性和计算属性）添加属性观察器。</p>
+<p>不需要为非重写的计算属性添加属性观察器，因为可以通过它的 <code>setter</code> 直接监控和响应值的变化。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// willSet 在新的值被设置之前调用</span></div><div class="line"><span class="comment">// didSet 在新的值被设置之后立即调用</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StepCounter</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> totalSteps: <span class="type">Int</span> = <span class="number">0</span> &#123;</div><div class="line">        <span class="keyword">willSet</span>(newTotalSteps) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"About to set totalSteps to <span class="subst">\(newTotalSteps)</span>"</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">didSet</span> &#123;</div><div class="line">            <span class="keyword">if</span> totalSteps &gt; oldValue &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"Added <span class="subst">\(totalSteps - oldValue)</span> steps"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> stepCounter = <span class="type">StepCounter</span>()</div><div class="line">stepCounter.totalSteps = <span class="number">200</span></div><div class="line"><span class="comment">//output: About to set totalSteps to 200</span></div><div class="line"><span class="comment">//output: Added 200 steps</span></div></pre></td></tr></table></figure>
+<h2 id="类型属性"><a href="#类型属性" class="headerlink" title="类型属性"></a>类型属性</h2><hr>
+<p>类型属性用于定义特定类型所有实例共享的数据，比如所有实例都能用的一个常量或变量。</p>
+<p>值类型的存储型类型属性可以是变量或常量，计算型类型属性跟实例的计算属性一样只能定义成变量属性。</p>
+<p>注：跟实例的存储属性不同，必须给存储型类型属性指定默认值，因为类型本身无法在初始化过程中使用构造器给类型属性赋值。</p>
+<p>   存储型类型属性是延迟初始化的，它们只有在第一次被访问的时候才会被初始化。即使它们被多个线程同时访问，系统也保证只会对其进行初始化一次，并且不需要对其使用 <code>lazy</code> 修饰符.</p>
+<h3 id="类型属性语法"><a href="#类型属性语法" class="headerlink" title="类型属性语法"></a>类型属性语法</h3><p>使用 <code>static</code> 来定义类型属性。</p>
+<p>在为类（<code>class</code>）定义计算型类型属性时，可以使用关键字 <code>class</code> 来支持子类对父类的实现进行重写。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SomeStructure</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">"some value"</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">SomeEnumeration</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">"some value"</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">6</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">"some value"</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">27</span></div><div class="line">    &#125;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">var</span> <span class="title">overrideableComputedTypeProperty</span>: <span class="title">Int</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">107</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//获取和设置类型属性的值</span></div><div class="line"><span class="built_in">print</span>(<span class="type">SomeStructure</span>.storedTypeProperty)</div><div class="line"><span class="comment">//output: some value</span></div><div class="line"><span class="type">SomeStructure</span>.storedTypeProperty = <span class="string">"other value"</span></div><div class="line"><span class="built_in">print</span>(<span class="type">SomeStructure</span>.storedTypeProperty)</div><div class="line"><span class="comment">//output: other value</span></div></pre></td></tr></table></figure>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><hr>
+<p>实例方法是属于某个特定类、结构体或者枚举类型实例的方法。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">insrement</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">count</span> += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用点语法调用实例方法</span></div><div class="line"><span class="keyword">let</span> counter = <span class="type">Counter</span>()</div><div class="line">counter.insrement()</div></pre></td></tr></table></figure>
+<h3 id="在实例方法中修改值类型"><a href="#在实例方法中修改值类型" class="headerlink" title="在实例方法中修改值类型"></a>在实例方法中修改值类型</h3><p>结构体和枚举是值类型。一般情况下，值类型的属性不能在它的实例方法中被修改。</p>
+<p>使用 <code>mutating</code> 方法就可以从方法内部改变它的属性。方法还可以给它隐含的 <code>self</code> 属性赋值一个全新的实例。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">moveByX</span><span class="params">(deltaX: Double, y deltaY: Double)</span></span> &#123;</div><div class="line">        x += deltaX</div><div class="line">        y += deltaY</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> somePoint = <span class="type">Point</span>(x: <span class="number">1.0</span>, y: <span class="number">1.0</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"old -- <span class="subst">\(somePoint)</span>"</span>)</div><div class="line"><span class="comment">//output: old -- Point(x: 1.0, y: 1.0)</span></div><div class="line">somePoint.moveByX(deltaX: <span class="number">2.0</span>, y: <span class="number">3.0</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"new -- <span class="subst">\(somePoint)</span>"</span>)</div><div class="line"><span class="comment">//output: new -- Point(x: 3.0, y: 4.0)</span></div></pre></td></tr></table></figure>
+<h3 id="在可变方法中给-self-赋值"><a href="#在可变方法中给-self-赋值" class="headerlink" title="在可变方法中给 self 赋值"></a>在可变方法中给 self 赋值</h3><p>可变方法能够赋给隐含属性 <code>self</code> 一个全新的实例</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">moveByX</span><span class="params">(deltaX: Double, y deltaY: Double)</span></span> &#123;</div><div class="line">        <span class="keyword">self</span> = <span class="type">Point</span>(x: x + deltaX, y: y + deltaY)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="枚举的可变方法可以把-self-设置为相同的枚举类型中不同的成员"><a href="#枚举的可变方法可以把-self-设置为相同的枚举类型中不同的成员" class="headerlink" title="枚举的可变方法可以把 self 设置为相同的枚举类型中不同的成员"></a>枚举的可变方法可以把 self 设置为相同的枚举类型中不同的成员</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">TriStateSwitch</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Off</span>, <span class="type">Low</span>, <span class="type">High</span></div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">next</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</div><div class="line">        <span class="keyword">case</span> .<span class="type">Off</span>:</div><div class="line">            <span class="keyword">self</span> = .<span class="type">Low</span></div><div class="line">        <span class="keyword">case</span> .<span class="type">Low</span>:</div><div class="line">            <span class="keyword">self</span> = .<span class="type">High</span></div><div class="line">        <span class="keyword">case</span> .<span class="type">High</span>:</div><div class="line">            <span class="keyword">self</span> = .<span class="type">Off</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> ovenLight = <span class="type">TriStateSwitch</span>.<span class="type">Low</span></div><div class="line">ovenLight.next()</div><div class="line"><span class="built_in">print</span>(ovenLight)</div><div class="line"><span class="comment">//output: High</span></div><div class="line">ovenLight.next()</div><div class="line"><span class="built_in">print</span>(ovenLight)</div><div class="line"><span class="comment">//output: Off</span></div></pre></td></tr></table></figure>
+<h2 id="类型方法"><a href="#类型方法" class="headerlink" title="类型方法"></a>类型方法</h2><hr>
+<p>类型本身调用的方法</p>
+<p>声明结构体和枚举的类型方法，在方法的 <code>func</code> 关键字之前加上关键字 <code>static</code> .</p>
+<p>类使用关键字 <code>class</code> 来允许子类重写父类的实现方法。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClasss</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">someTypeMethod</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="comment">// some thing</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="type">SomeClasss</span>.someTypeMethod()</div></pre></td></tr></table></figure>
+<p>一个类型方法可以调用本类中另一个类型方法的名称，而无需在方法名称前面加上类型名称的前缀。</p>
+<p>同样，结构体和枚举的类型方法也能够直接通过静态属性的名称访问静态属性，而不需要类型名称前缀。</p>
+<h2 id="下标脚本"><a href="#下标脚本" class="headerlink" title="下标脚本"></a>下标脚本</h2><hr>
+<p>下标脚本可以定义在类(<code>Class</code>)、结构体(<code>Structure</code>)、枚举(<code>Enumeration</code>)这些目标中。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//subscript(index: Int) -&gt; Int &#123;</span></div><div class="line"><span class="comment">//    get &#123;</span></div><div class="line"><span class="comment">//        return 1</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"><span class="comment">//    set &#123;</span></div><div class="line"><span class="comment">//        </span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"><span class="comment">//&#125;</span></div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TimesTable</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> multiplier: <span class="type">Int</span></div><div class="line">    <span class="keyword">subscript</span>(index: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> multiplier * index</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> threeTimesTable = <span class="type">TimesTable</span>(multiplier: <span class="number">3</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"3的6倍是<span class="subst">\(threeTimesTable[<span class="number">6</span>])</span>"</span>)</div><div class="line"><span class="comment">//output: 3的6倍是18</span></div></pre></td></tr></table></figure>
+<hr>
+<p>本文参考：<a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/#//apple_ref/doc/uid/TP40014097-CH3-ID0" target="_blank" rel="external">The Swift Programming Language</a></p>
+<p>转载请注明出处！</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/09/09/Swift学习笔记《十二》-继承、构造、析构/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《十二》-继承、构造、析构</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/09/07/Swift学习笔记《十》-类和结构体/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《十》-类和结构体</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift学习笔记《十一》-属性与方法.md" data-title="Swift学习笔记《十一》-属性与方法" data-url="https://wfalloc.github.com/2016/09/08/Swift学习笔记《十一》-属性与方法/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+    <aside>
+        <div id="toc">
+        </div>
+    </aside>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2017 Wf
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>

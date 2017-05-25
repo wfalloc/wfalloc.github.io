@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                Swift学习笔记《十》-类和结构体 | Wfalloc
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            <link rel="stylesheet" href="/css/highlight.light.css">
+            <link rel="stylesheet" href="/css/prism-customize.css">
+            <link rel="stylesheet" href="/css/nav-icon.css">
+            <link rel="stylesheet" href="/css/waves.min.css">
+            <link rel="stylesheet" href="/css/jquery.tocify.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/nav-indicator.css">
+            
+  
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?413401b7ed73ab84113611bf800ea304";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  
+
+  
+  <!-- 谷歌统计 -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80736453-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+            </meta>
+        </meta>
+    </head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    Wfalloc
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/">
+                                首页
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                归档
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave " href="/about">
+                                关于
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a class="wave no-smoothstate" href="/atom.xml">
+                                订阅
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">Swift学习笔记《十》-类和结构体</h1>
+
+          <section class="post-info">
+            <span class="post-date">2016/09/07</span>
+            
+            
+            <span class="post-tags">
+              <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Swift/">Swift</a></li></ul>
+            </span>
+            
+          </section>
+
+          <section class="post-content">
+            <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><hr>
+<p>定义类名时推荐使用符合标准<code>Swift</code>类型的大写命名风格（如 <code>String</code> ）</p>
+<p>为属性和方法命名时推荐使用驼峰命名法</p>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="comment">//class definition goes here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="类的示例"><a href="#类的示例" class="headerlink" title="类的示例"></a>类的示例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoModel</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">"zhangsan"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="构建类实例"><a href="#构建类实例" class="headerlink" title="构建类实例"></a>构建类实例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someVideoModel = <span class="type">VideoModel</span>()</div></pre></td></tr></table></figure>
+<h3 id="属性访问-使用点语法"><a href="#属性访问-使用点语法" class="headerlink" title="属性访问,使用点语法"></a>属性访问,使用点语法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(someVideoModel.name)</div></pre></td></tr></table></figure>
+<h3 id="类是引用类型"><a href="#类是引用类型" class="headerlink" title="类是引用类型"></a>类是引用类型</h3><p>与值类型不同，引用类型在被赋予到一个变量、常量或者被传递到一个函数时，其值不会被拷贝。引用的是已存在的实例本身。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm1 = <span class="type">VideoModel</span>()</div><div class="line">vm1.name = <span class="string">"1080P"</span></div><div class="line"><span class="keyword">var</span> vm2 = vm1</div><div class="line"><span class="built_in">print</span>(<span class="string">"vm1 -- <span class="subst">\(vm1.name)</span> \nvm2 -- <span class="subst">\(vm2.name)</span>"</span>)</div><div class="line"><span class="comment">//output: vm1 -- 1080P</span></div><div class="line"><span class="comment">//output: vm2 -- 1080P</span></div><div class="line">vm2.name = <span class="string">"720P"</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"vm1 -- <span class="subst">\(vm1.name)</span> \nvm2 -- <span class="subst">\(vm2.name)</span>"</span>)</div><div class="line"><span class="comment">//output: vm1 -- 720P</span></div><div class="line"><span class="comment">//output: vm2 -- 720P</span></div></pre></td></tr></table></figure>
+<h3 id="恒等运算符"><a href="#恒等运算符" class="headerlink" title="恒等运算符"></a>恒等运算符</h3><p>类是引用类型，有可能有多个常量和变量在幕后同时引用同一个类实例。</p>
+<p>使用 === （等价于）、 !== （不等价于）检测两个常量或者变量是否引用同一个实例。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> vm1 === vm2 &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"refer to the same Resolution instance."</span>)</div><div class="line">&#125; </div><div class="line"><span class="comment">//output: refer to the same Resolution instance.</span></div></pre></td></tr></table></figure>
+<p>注：”等价于”(===)表示两个类类型的常量或者变量引用同一个类实例。</p>
+<p>   “等于”(==)表示两个实例的值相等或相同。</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><hr>
+<h3 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SomeStrusture</span> </span>&#123;</div><div class="line">    <span class="comment">//structure definition goes here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="结构体示例"><a href="#结构体示例" class="headerlink" title="结构体示例"></a>结构体示例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Resolution</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0</span></div><div class="line">    <span class="keyword">var</span> height = <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="构建结构体实例"><a href="#构建结构体实例" class="headerlink" title="构建结构体实例"></a>构建结构体实例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someResolution = <span class="type">Resolution</span>()</div></pre></td></tr></table></figure>
+<h3 id="属性访问，使用点语法"><a href="#属性访问，使用点语法" class="headerlink" title="属性访问，使用点语法"></a>属性访问，使用点语法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(someResolution.width)</div></pre></td></tr></table></figure>
+<h3 id="结构体自动生成的成员逐一构造器"><a href="#结构体自动生成的成员逐一构造器" class="headerlink" title="结构体自动生成的成员逐一构造器"></a>结构体自动生成的成员逐一构造器</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> res = <span class="type">Resolution</span>(width: <span class="number">2</span>, height: <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h3 id="结构体和枚举是值类型"><a href="#结构体和枚举是值类型" class="headerlink" title="结构体和枚举是值类型"></a>结构体和枚举是值类型</h3><p>值类型被赋予给一个变量、常量或者被传递给一个函数时，其值会被拷贝。</p>
+<p>在 <code>Swift</code> 中，所有的基本类型：整数（<code>Int</code>）、浮点数（<code>Float</code>）、布尔值（<code>Bool</code>）、字符串（<code>String</code>）、数组（<code>Array</code>）、字典（<code>Dictionary</code>），都是值类型，在底层都是以结构体的形式所实现。</p>
+<h3 id="值类型示例"><a href="#值类型示例" class="headerlink" title="值类型示例"></a>值类型示例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> res1 = <span class="type">Resolution</span>(width: <span class="number">1</span>, height: <span class="number">1</span>)</div><div class="line"><span class="keyword">var</span> res2 = res1</div><div class="line">res1.width = <span class="number">2</span></div><div class="line">res1.height = <span class="number">2</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"res1 -- <span class="subst">\(res1)</span> \nres2 -- <span class="subst">\(res2)</span>"</span>)</div><div class="line"><span class="comment">//output: res1 -- Resolution(width: 2, height: 2)</span></div><div class="line"><span class="comment">//output: res2 -- Resolution(width: 1, height: 1)</span></div></pre></td></tr></table></figure>
+<h2 id="字符串、数组、字典类型的赋值与复制行为"><a href="#字符串、数组、字典类型的赋值与复制行为" class="headerlink" title="字符串、数组、字典类型的赋值与复制行为"></a>字符串、数组、字典类型的赋值与复制行为</h2><hr>
+<p><code>Swift</code>中，许多基本类型，如<code>String</code>，<code>Array</code>和<code>Dictionary</code>类型均以结构体的形式实现。这意味着被赋值给新的常量或变量，或者被传入函数或方法中时，它们的值会被拷贝。</p>
+<p><code>Objective-C</code> 中<code>NSString</code>,<code>NSArray</code>,<code>NSDictionary</code>类型均以类的形式实现。它们在被赋值或者被传入函数或方法时，不会发生值拷贝，而是传递现有实例的引用。</p>
+<hr>
+<p>本文参考：<a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/#//apple_ref/doc/uid/TP40014097-CH3-ID0" target="_blank" rel="external">The Swift Programming Language</a></p>
+<p>转载请注明出处！</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/2016/09/08/Swift学习笔记《十一》-属性与方法/" >
+              <strong class="article-nav-caption">上一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《十一》-属性与方法</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/2016/09/02/Swift学习笔记《九》-枚举/">
+              <strong class="article-nav-caption">下一篇</strong>
+              <p class="post-nav-title">Swift学习笔记《九》-枚举</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+    <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="_posts/Swift学习笔记《十》-类和结构体.md" data-title="Swift学习笔记《十》-类和结构体" data-url="https://wfalloc.github.com/2016/09/07/Swift学习笔记《十》-类和结构体/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"wayouliu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+
+  
+
+
+</div>
+
+    </div>
+    
+    <aside>
+        <div id="toc">
+        </div>
+    </aside>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动，搭载<a href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a>主题</p>
+    <p>
+        &copy; 2017 Wf
+    </p>
+</footer>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/waves.js"></script>
+<script src="/lib/jquery-ui.js"></script>
+<script src="/lib/jquery.tocify.js"></script>
+<script src="/js/main.js"></script>
+
+    </body>
+</html>
