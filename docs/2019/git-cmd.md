@@ -1,7 +1,3 @@
----
-title: Git 命令
-date: 2019-08-06 00:00:00
----
 
 ## Git 命令
 
@@ -56,3 +52,7 @@ git remote show origin
 //本地同步已删除的远程分支
 git remote prune origin
 ```
+
+---
+
+date: 2019-08-06 00:00:00

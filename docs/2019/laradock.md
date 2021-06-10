@@ -1,7 +1,3 @@
----
-title: Laradock
-date: 2019-07-28 00:00:00
----
 
 ## Laradock 首次使用
 
@@ -67,3 +63,7 @@ docker-compose build
 // 重新构造容器
 docker-compose build mysql
 ```
+
+---
+
+date: 2019-07-28 00:00:00

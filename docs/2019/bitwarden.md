@@ -1,7 +1,3 @@
----
-title: Docker 自建 Bitwarden 密码服务器
-date: 2019-11-29 00:00:00
----
 
 密码管理工具最初接触的是 KeePass 。作为一个开源的密码管理器，KeePass 还是比较优秀的。奈何 KeePass 不支持密码库同步。接触到 Bitwarden 一款可以自己搭建的开源密码管理工具。瞬间有了替换密码管理工具的想法
 
@@ -127,3 +123,7 @@ WEB_VAULT_ENABLED=false #是否开启 Web 客户端
 ```bash
 docker-compose down && docker-compose up -d
 ```
+
+---
+
+date: 2019-11-29 00:00:00

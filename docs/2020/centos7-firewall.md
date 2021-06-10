@@ -1,7 +1,3 @@
----
-title: CentOS 7 防火墙设置
-date: 2020-06-04 13:00:00
----
 
 #### CentOS 7 防火墙设置
 
@@ -59,3 +55,6 @@ Trying 192.168.1.102...
 telnet: connect to address 192.168.1.102: Connection refused
 ```
 
+---
+
+date: 2020-06-04 13:00:00
