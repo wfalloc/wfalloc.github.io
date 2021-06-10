@@ -1,16 +1,5 @@
 # LinuxDeploy
 
-- [LinuxDeploy](#linuxdeploy)
-  - [下载](#下载)
-  - [安装后配置](#安装后配置)
-    - [busybox](#busybox)
-    - [linuxdeploy](#linuxdeploy-1)
-  - [设置开机自启](#设置开机自启)
-    - [编写启动脚本](#编写启动脚本)
-    - [/etc/rc.local](#etcrclocal)
-    - [添加可执行权限](#添加可执行权限)
-  - [参考](#参考)
-
 ## 下载
 
 [linuxdeploy](https://github.com/meefik/linuxdeploy/releases)

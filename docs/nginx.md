@@ -1,16 +1,5 @@
 # NGINX 编译安装
 
-- [NGINX 编译安装](#nginx-编译安装)
-  - [下载](#下载)
-  - [解压](#解压)
-  - [安装](#安装)
-  - [nginx 常用命令](#nginx-常用命令)
-    - [添加软连接](#添加软连接)
-    - [检查防火墙设置](#检查防火墙设置)
-    - [添加开机自启](#添加开机自启)
-    - [nginx 管理脚本](#nginx-管理脚本)
-  - [常见问题](#常见问题)
-
 ## 下载
 
 [http://nginx.org/en/download.html](http://nginx.org/en/download.html)

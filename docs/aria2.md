@@ -1,10 +1,5 @@
 # Mac 上使用 aria2
 
-- [Mac 上使用 aria2](#mac-上使用-aria2)
-  - [下载 aria2](#下载-aria2)
-  - [配置修改](#配置修改)
-  - [批量下载](#批量下载)
-
 ## 下载 aria2
 
 [https://github.com/aria2/aria2/releases](https://github.com/aria2/aria2/releases)
