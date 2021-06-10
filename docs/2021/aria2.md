@@ -10,7 +10,7 @@ Mac 版本：`osx-darwin.dmg`
 
 > vim ~/.aria2/aria2.conf
 
-```
+```vim
 #允许rpc
 enable-rpc=false
 

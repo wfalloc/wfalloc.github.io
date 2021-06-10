@@ -12,7 +12,7 @@
 
 ## 安装
 
-```
+```bash
 ./configure
 
 make && make install
@@ -20,7 +20,7 @@ make && make install
 
 ## nginx 常用命令
 
-```
+```bash
 // 检查配置文件
 ./nginx -t
 // 帮助
@@ -45,7 +45,7 @@ make && make install
 
 ### 添加开机自启
 
-```
+```bash
 vim /etc/rc.d/rc.local
 
 添加 nginx
@@ -61,11 +61,11 @@ chmod -x /usr/local/nginx/sbin/nginx
 
 创建脚本
 
-```
+```bash
 vi  /etc/init.d/nginx
 ```
 
-```
+```bash
 #! /bin/sh
 # chkconfig: 2345 55 25
 # Description: Startup script for nginx webserver on Debian. Place in /etc/init.d and
@@ -190,13 +190,13 @@ esac
 
 添加可执行权限
 
-```
+```bash
 chmod +x /etc/init.d/nginx
 ```
 
 使用
 
-```
+```bash
 service nginx start
 service nginx stop
 service nginx status
