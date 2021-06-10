@@ -1,5 +1,4 @@
-
-#### PHP CURL 上传文件
+2019-10-23
 
 ```php
 public function curlUploadFile()
@@ -33,6 +32,3 @@ public function curlUploadFile()
     return $error ? $error : $result;
 }
 ```
-
----
-date: 2019-10-23 11:45:46

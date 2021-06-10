@@ -1,3 +1,4 @@
+2020-06-04
 
 #### CentOS 7 防火墙设置
 
@@ -54,7 +55,3 @@ Connection closed by foreign host.
 Trying 192.168.1.102...
 telnet: connect to address 192.168.1.102: Connection refused
 ```
-
----
-
-date: 2020-06-04 13:00:00

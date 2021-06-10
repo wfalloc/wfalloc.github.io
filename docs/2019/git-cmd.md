@@ -1,5 +1,6 @@
+2019-08-06
 
-## Git 命令
+#### Git 命令
 
 ```
 //克隆一个项目
@@ -52,7 +53,3 @@ git remote show origin
 //本地同步已删除的远程分支
 git remote prune origin
 ```
-
----
-
-date: 2019-08-06 00:00:00

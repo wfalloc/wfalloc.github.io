@@ -1,5 +1,6 @@
+2019-07-28
 
-## Laradock 首次使用
+#### Laradock 首次使用
 
 ---
 
@@ -25,7 +26,7 @@ docker-compose up -d nginx mysql redis workspace
 docker-compose up -d apache2 mysql redis workspace 
 ```
 
-## 其他命令
+#### 其他命令
 
 ---
 
@@ -63,7 +64,3 @@ docker-compose build
 // 重新构造容器
 docker-compose build mysql
 ```
-
----
-
-date: 2019-07-28 00:00:00

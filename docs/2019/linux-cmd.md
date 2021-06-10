@@ -1,5 +1,6 @@
+2019-09-19
 
-## Docker 安装
+#### Docker 安装
 
 ```bash
 // Linux Docker 安装
@@ -22,7 +23,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-## 系统通知
+#### 系统通知
 
 ```bash
 // You have new mail in /var/spool/mail/root
@@ -47,7 +48,3 @@ du -sm [文件夹] //返回该文件夹总M数
  
 du -h [目录名] //查看指定文件夹下的所有文件大小（包含子文件夹）
 ```
-
----
-
-date: 2019-09-19 00:00:00
