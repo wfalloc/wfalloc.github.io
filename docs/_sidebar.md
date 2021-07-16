@@ -5,6 +5,8 @@
   * [NGINX 编译安装](2021/nginx.md)
   * [Aria2 使用](2021/aria2.md)
   * [LinuxDeploy](2021/linuxdeploy.md)
+  * [Apache配置文件]()
+  * [nginx配置文件]()
 
 * 2020
 
