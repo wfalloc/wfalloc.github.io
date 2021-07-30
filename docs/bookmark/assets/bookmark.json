@@ -1,0 +1,50 @@
+[
+    {
+        "title": "常用推荐",
+        "icon": "linecons-star",
+        "items": [
+            {
+                "name": "Dribbble",
+                "tip": "",
+                "url": "https://www.baidu.com",
+                "logo": "https://www.baidu.com/favicon.ico"
+            }
+        ]
+    },
+    {
+        "title": "搜索",
+        "icon": "linecons-search",
+        "items": [
+            {
+                "name": "Google",
+                "tip": "",
+                "url": "https://www.google.com/",
+                "logo": "https://www.google.com/favicon.ico"
+            },
+            {
+                "name": "Baidu",
+                "tip": "",
+                "url": "https://www.baidu.com/",
+                "logo": "https://www.baidu.com/favicon.ico"
+            },
+            {
+                "name": "Bing",
+                "tip": "",
+                "url": "https://cn.bing.com/",
+                "logo": "https://cn.bing.com/favicon.ico"
+            },
+            {
+                "name": "Searx",
+                "tip": "一个尊重隐私、可再开发的元搜索引擎",
+                "url": "https://searx.be/",
+                "logo": "https://searx.be/favicon.ico"
+            },
+            {
+                "name": "Searx instances",
+                "tip": "Searx 实例",
+                "url": "https://searx.space/",
+                "logo": "https://searx.space/favicon.ico"
+            }
+        ]
+    }
+]
