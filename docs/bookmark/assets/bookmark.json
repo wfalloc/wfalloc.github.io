@@ -48,7 +48,7 @@
         ]
     },
     {
-        "title": "科技",
+        "title": "科技资讯",
         "icon": "linecons-truck",
         "items": [
             {
@@ -56,6 +56,54 @@
                 "tip": "高效工作，品质生活",
                 "url": "https://sspai.com/",
                 "logo": "https://cdn.sspai.com/sspai/assets/img/favicon/icon.ico"
+            },
+            {
+                "name": "图灵社区",
+                "tip": "",
+                "url": "https://www.ituring.com.cn/",
+                "logo": "https://www.ituring.com.cn/favicon.png"
+            },
+            {
+                "name": "Inoreader",
+                "tip": "重新掌控你的新闻订阅源",
+                "url": "https://www.inoreader.com/",
+                "logo": "https://www.inoreader.com/favicon.ico"
+            },
+            {
+                "name": "RSS Source",
+                "tip": "充实你的 RSS 订阅源",
+                "url": "https://rss-source.com/",
+                "logo": "https://rss-source.com/images/favicon.ico"
+            },
+            {
+                "name": "今日热榜",
+                "tip": "",
+                "url": "https://tophub.today/",
+                "logo": "https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png"
+            },
+            {
+                "name": "鱼塘热榜",
+                "tip": "",
+                "url": "https://mo.fish/",
+                "logo": "https://mo.fish/fish.ico"
+            },
+            {
+                "name": "w2solo",
+                "tip": "独立开发者社区",
+                "url": "https://w2solo.com/",
+                "logo": "https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/7cl3u.png"
+            },
+            {
+                "name": "geekhub",
+                "tip": "极客电商",
+                "url": "https://www.geekhub.com/",
+                "logo": "https://www.geekhub.com/favicon.ico"
+            },
+            {
+                "name": "逮蝦戶",
+                "tip": "付费服务共享",
+                "url": "https://daixiahu.co/#/buses",
+                "logo": "https://daixiahu.co/statics/logo.png"
             }
         ]
     },
@@ -70,6 +118,48 @@
                 "logo": "https://www.appinn.com/favicon.ico"
             },
             {
+                "name": "最美应用",
+                "tip": "一起发现好用、好看、好玩的应用",
+                "url": "http://zuimeia.com/",
+                "logo": "http://static.zuimeia.com/product/img/favicon.ico"
+            },
+            {
+                "name": "反斗软件",
+                "tip": "",
+                "url": "http://www.apprcn.com/",
+                "logo": "http://www.apprcn.com/favicon.ico"
+            },
+            {
+                "name": "麦氪派",
+                "tip": "",
+                "url": "https://www.waitsun.com/topics/os",
+                "logo": "https://static.waitsun.com/wp-content/themes/WU/img/favicon.ico"
+            },
+            {
+                "name": "macdo",
+                "tip": "",
+                "url": "https://www.macdo.cn/",
+                "logo": "https://www.macdo.cn/wp-content/uploads/2017/10/6464.png"
+            },
+            {
+                "name": "殁漂遥",
+                "tip": "",
+                "url": "https://www.laomo.me/",
+                "logo": "https://www.laomo.me/assets/images/favicon.ico"
+            },
+            {
+                "name": "MacGames",
+                "tip": "",
+                "url": "https://www.macgames.cn/",
+                "logo": "https://cdn.icheese.net/wp-content/uploads/2020/09/1601459194-1142798539215ef.png"
+            },
+            {
+                "name": "异次元软件世界",
+                "tip": "",
+                "url": "https://www.iplaysoft.com/",
+                "logo": ""
+            },
+            {
                 "name": "FFmpeg",
                 "tip": "",
                 "url": "https://www.ffmpeg.org/",
@@ -80,6 +170,78 @@
                 "tip": "",
                 "url": "http://tasker.wikidot.com/",
                 "logo": "http://tasker.wikidot.com/local--favicon/favicon.gif"
+            }
+        ]
+    },
+    {
+        "title": "社区",
+        "icon": "linecons-desktop",
+        "items": [
+            {
+                "name": "力扣",
+                "tip": "leetcode",
+                "url": "https://leetcode-cn.com/",
+                "logo": "https://leetcode-cn.com/favicon.ico"
+            },
+            {
+                "name": "LearnKu",
+                "tip": "终身编程者的知识社区",
+                "url": "https://learnku.com/",
+                "logo": "https://cdn.learnku.com/uploads/images/201901/27/1/jdor3lMsMw.png!/both/44x44"
+            },
+            {
+                "name": "CODECASTS",
+                "tip": "PHP Laravel Vue.js 视频教程",
+                "url": "https://www.codecasts.com/",
+                "logo": "https://www.codecasts.com/images/favicon.ico?version=2.5"
+            },
+            {
+                "name": "小专栏",
+                "tip": "专业人士的创作知识社区",
+                "url": "https://xiaozhuanlan.com/",
+                "logo": "https://images.xiaozhuanlan.com/assets/favicon-bd135558698197f509ada06695c03a4f458f0077fa476f9a4e7ba9664f3dc55f.ico"
+            },
+            {
+                "name": "PHP 之道",
+                "tip": "PHP The Right Way 中文版",
+                "url": "http://laravel-china.github.io/php-the-right-way/",
+                "logo": "http://laravel-china.github.io/php-the-right-way/images/favicon.png"
+            },
+            {
+                "name": "ObjC 中国",
+                "tip": "",
+                "url": "https://objccn.io/",
+                "logo": "https://objccn.io/favicon.ico"
+            },
+            {
+                "name": "Swifter",
+                "tip": "Swift 必备 tips",
+                "url": "https://swifter.tips/",
+                "logo": "https://swifter.tips/images/favico.png"
+            },
+            {
+                "name": "SwiftGG",
+                "tip": "高质量的 Swift 译文网站",
+                "url": "https://swift.gg/",
+                "logo": "https://swift.gg/img/favicon_new.ico"
+            },
+            {
+                "name": "SwiftCafe",
+                "tip": "享受代码的乐趣",
+                "url": "http://www.swiftcafe.io/",
+                "logo": "http://www.swiftcafe.io/favicon.ico"
+            },
+            {
+                "name": "raywenderlich",
+                "tip": "High quality programming tutorials: iOS, Android, Swift, Kotlin, Flutter, Server Side Swift, Unity, and more!",
+                "url": "https://www.raywenderlich.com/",
+                "logo": "https://www.raywenderlich.com/favicon-32x32.png"
+            },
+            {
+                "name": "牛客网",
+                "tip": "",
+                "url": "https://www.nowcoder.com/",
+                "logo": "https://static.nowcoder.com/images/logo_87_87.png"
             }
         ]
     },
@@ -116,12 +278,48 @@
                 "tip": "",
                 "url": "https://www.gitbook.com/explore/",
                 "logo": "https://assets.website-files.com/600ead1452cf056d0e52dbed/602d1bc4dada8daade9e5dbe_gitbook-favicon.ico"
+            },
+            {
+                "name": "Github趋势",
+                "tip": "Github Trending",
+                "url": "https://github-trending.com/",
+                "logo": ""
+            }
+        ]
+    },
+    {
+        "title": "工具",
+        "icon": "linecons-graduation-cap",
+        "items": [
+            {
+                "name": "wikiHow",
+                "tip": "你可以信赖的万事指南",
+                "url": "https://zh.wikihow.com/",
+                "logo": "https://zh.wikihow.com/favicon.ico"
+            },
+            {
+                "name": "阿里巴巴矢量图标库",
+                "tip": "iconfont",
+                "url": "https://www.iconfont.cn/",
+                "logo": "https://img.alicdn.com/imgextra/i2/O1CN01ZyAlrn1MwaMhqz36G_!!6000000001499-73-tps-64-64.ico"
+            },
+            {
+                "name": "programmingfonts",
+                "tip": "编程字体",
+                "url": "https://www.programmingfonts.org/",
+                "logo": "https://www.programmingfonts.org/favicon.png"
+            },
+            {
+                "name": "Docker Hub",
+                "tip": "",
+                "url": "https://hub.docker.com/",
+                "logo": "https://hub.docker.com/favicon.ico"
             }
         ]
     },
     {
         "title": "政府服务",
-        "icon": "linecons-desktop",
+        "icon": "linecons-graduation-cap",
         "items": [
             {
                 "name": "个人信用信息服务平台",
