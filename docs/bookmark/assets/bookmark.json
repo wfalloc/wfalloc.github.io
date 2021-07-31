@@ -46,5 +46,89 @@
                 "logo": "https://searx.space/favicon.ico"
             }
         ]
+    },
+    {
+        "title": "科技",
+        "icon": "linecons-truck",
+        "items": [
+            {
+                "name": "少数派",
+                "tip": "高效工作，品质生活",
+                "url": "https://sspai.com/",
+                "logo": "https://cdn.sspai.com/sspai/assets/img/favicon/icon.ico"
+            }
+        ]
+    },
+    {
+        "title": "软件推荐",
+        "icon": "linecons-desktop",
+        "items": [
+            {
+                "name": "小众软件",
+                "tip": "分享免费、小巧、实用、有趣、绿色的软件",
+                "url": "https://www.appinn.com/",
+                "logo": "https://www.appinn.com/favicon.ico"
+            },
+            {
+                "name": "FFmpeg",
+                "tip": "",
+                "url": "https://www.ffmpeg.org/",
+                "logo": "https://www.ffmpeg.org/favicon.ico"
+            },
+            {
+                "name": "Tasker Wiki",
+                "tip": "",
+                "url": "http://tasker.wikidot.com/",
+                "logo": "http://tasker.wikidot.com/local--favicon/favicon.gif"
+            }
+        ]
+    },
+    {
+        "title": "Git",
+        "icon": "linecons-desktop",
+        "items": [
+            {
+                "name": "GitHub",
+                "tip": "",
+                "url": "https://github.com/",
+                "logo": "https://github.com/favicon.ico"
+            },
+            {
+                "name": "Gitee 码云",
+                "tip": "基于 Git 的代码托管和研发协作平台",
+                "url": "https://gitee.com/",
+                "logo": "https://gitee.com/favicon.ico"
+            },
+            {
+                "name": "CODING",
+                "tip": "一站式软件研发管理平台",
+                "url": "https://coding.net/",
+                "logo": "https://dn-coding-net-production-static.codehub.cn/platform/favicon.ico"
+            },
+            {
+                "name": "Git 文档",
+                "tip": "",
+                "url": "https://git-scm.com/book/zh/v2/",
+                "logo": "https://git-scm.com/favicon.ico"
+            },
+            {
+                "name": "GitBook",
+                "tip": "",
+                "url": "https://www.gitbook.com/explore/",
+                "logo": "https://assets.website-files.com/600ead1452cf056d0e52dbed/602d1bc4dada8daade9e5dbe_gitbook-favicon.ico"
+            }
+        ]
+    },
+    {
+        "title": "政府服务",
+        "icon": "linecons-desktop",
+        "items": [
+            {
+                "name": "个人信用信息服务平台",
+                "tip": "",
+                "url": "https://ipcrs.pbccrc.org.cn/",
+                "logo": ""
+            }
+        ]
     }
 ]
